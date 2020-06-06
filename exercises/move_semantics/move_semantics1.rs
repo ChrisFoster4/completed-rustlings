@@ -1,12 +1,12 @@
 // move_semantics1.rs
 // Make me compile! Execute `rustlings hint move_semantics1` for hints :)
 
-// I AM NOT DONE
-
 fn main() {
-    let vec0 = Vec::new();
+    let mut vec0 = Vec::new();
 
-    let vec1 = fill_vec(vec0);
+    //Move vec0 -> vec1 not borrow
+    //Using vec0 after this is illegal
+    let mut vec1 = fill_vec(vec0);
 
     println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
 
